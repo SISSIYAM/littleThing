@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.document.onkeydown = function(e) {
+            if (!e) {
+                e = event;
+            }
+            if (e.keyCode == 27) {
+                lightbox_close();
+            }
+        }
+
+        function lightbox_open() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            window.scrollTo(0, 0);
+            document.getElementById('light').style.display = 'inline-block';
+            document.getElementById('fade').style.display = 'inline-block';
+            lightBoxVideo.play();
+        }
+
+        function lightbox_close() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            lightBoxVideo.pause();
+        }
+    </script>
+</head>
+<body>
+<div class="videoContainer">
+    <ul class="videoList">
+        <li class="videoItem videoItemFirst">
+            <div id="light">
+                <a class="boxClose" onclick="lightbox_close();">
+                </a>
+                <video id="VisaChipCardVideo" width="600" controls>
+                    <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="fade" onClick="lightbox_close();"></div>
+
+            <div class="coverItem">
+                <a href="#" onclick="lightbox_open();">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" width="296px" height="180px"></a>
+            </div>
+            <h3>介绍XXXXXXX</h3>
+            <p>价格</p>
+        </li>
+        <li class="videoItem">
+            <div id="light">
+                <a class="boxClose" onclick="lightbox_close();">
+                </a>
+                <video id="VisaChipCardVideo" width="600" controls>
+                    <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="fade" onClick="lightbox_close();"></div>
+
+            <div class="coverItem">
+                <a href="#" onclick="lightbox_open();">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" width="296px" height="180px"></a>
+            </div>
+            <h3>介绍</h3>
+            <p>价格</p>
+        </li>
+        <li class="videoItem">
+            <div id="light">
+                <a class="boxClose"  onclick="lightbox_close();">
+                </a>
+                <video id="VisaChipCardVideo" width="600" controls>
+                    <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="fade" onClick="lightbox_close();"></div>
+
+            <div class="coverItem">
+                <a href="#" onclick="lightbox_open();">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" width="296px" height="180px"></a>
+            </div>
+            <h3>介绍</h3>
+            <p>价格</p>
+        </li>
+        <li class="videoItem">
+            <div id="light">
+                <a class="boxClose"  onclick="lightbox_close();">
+                </a>
+                <video id="VisaChipCardVideo" width="600" controls>
+                    <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="fade" onClick="lightbox_close();"></div>
+
+            <div class="coverItem">
+                <a href="#" onclick="lightbox_open();">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" width="296px" height="180px"></a>
+            </div>
+            <h3>介绍</h3>
+            <p>价格</p>
+        </li>
+    </ul>
+</div>
+</body>
+<style>
+    .videoContainer {
+        display: block;
+    }
+    .videoList {
+        width: 1240px;
+        height: 285px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .videoItem:first-child, .videoItemFirst {
+        margin-left:0;
+    }
+    .videoItem {
+        position: relative;
+        float: left;
+        width: 296px;
+        height: 285px;
+        margin-left: 14px;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+    #fade {
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1001;
+        -moz-opacity: 0.8;
+        opacity: .80;
+        filter: alpha(opacity=80);
+    }
+
+    #light {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-width: 880px;
+        max-height: 536px;
+        border: 2px solid #FFF;
+        background: #FFF;
+        z-index: 1002;
+        overflow: visible;
+    }
+
+    .boxclose {
+        float: right;
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #AEAEAE;
+        border-radius: 3px;
+        background: #222222;
+        font-size: 31px;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 0px;
+        padding: 11px 3px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        z-index: 1002;
+        opacity: 0.9;
+    }
+
+    .boxclose:before {
+        content: "×";
+    }
+
+    #fade:hover ~ #boxclose {
+        display:none;
+    }
+
+</style>
+</html>
